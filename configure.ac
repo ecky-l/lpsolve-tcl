@@ -19,7 +19,7 @@ dnl	to configure the system for the local environment.
 # so that we create the export library with the dll.
 #-----------------------------------------------------------------------
 
-AC_INIT([sample], [0.5])
+AC_INIT([lpsolve-tcl], [5.5.2])
 
 #--------------------------------------------------------------------
 # Call TEA_INIT as the first TEA_ macro to set up initial vars.
@@ -71,7 +71,7 @@ TEA_SETUP_COMPILER
 # and PKG_TCL_SOURCES.
 #-----------------------------------------------------------------------
 
-TEA_ADD_SOURCES([sample.c tclsample.c])
+TEA_ADD_SOURCES([tclLpsolve.c])
 TEA_ADD_HEADERS([])
 TEA_ADD_INCLUDES([])
 TEA_ADD_LIBS([])
@@ -172,5 +172,7 @@ TEA_PROG_TCLSH
 # You may alternatively have a special pkgIndex.tcl.in or other files
 # which require substituting th AC variables in.  Include these here.
 #--------------------------------------------------------------------
+FIND_LPSOLVE_INCLUDES
+FIND_LPSOLVE_LIBS
 
 AC_OUTPUT([Makefile pkgIndex.tcl])
